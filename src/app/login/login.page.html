@@ -1,0 +1,32 @@
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <div class="login-header">
+      <img src="assets/logo.png" alt="Fashion UK">
+    </div>
+    <ion-card>
+      <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <ion-item>
+            <ion-label position="floating">Store Id</ion-label>
+            <ion-input type="text" formControlName="storeId"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">PIN</ion-label>
+            <ion-input type="password" formControlName="pin"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-checkbox formControlName="rememberMe"></ion-checkbox>
+            <ion-label>Remember me</ion-label>
+          </ion-item>
+          <ion-button expand="block" type="submit" [disabled]="loginForm.invalid" color="primary">
+            Login
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

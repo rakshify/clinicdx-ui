@@ -1,0 +1,7 @@
+{
+  "name": "clinicdx-ui",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
