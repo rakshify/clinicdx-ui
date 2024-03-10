@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating" color="dark">First Name</ion-label>
+    <ion-input [(ngModel)]="firstName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="dark">Last Name</ion-label>
+    <ion-input [(ngModel)]="lastName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark">Gender</ion-label>
+    <ion-radio-group [(ngModel)]="gender">
+      <ion-radio value="male">Male</ion-radio>
+      <ion-radio value="female">Female</ion-radio>
+    </ion-radio-group>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="dark">Address</ion-label>
+    <ion-textarea [(ngModel)]="address"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="dark">Phone Number</ion-label>
+    <ion-input [(ngModel)]="phoneNumber"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="saveUser()">Save</ion-button>
+</ion-content>
