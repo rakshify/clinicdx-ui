@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../core/services/user.service';
+import { IUser } from '../core/interfaces/user';
 
 @Component({
   selector: 'app-user-profile',
@@ -26,10 +27,10 @@ export class UserProfilePage implements OnInit {
     });
   }
 
-  saveUser() {
-    const user = {
-      firstName: this.firstName,
-      lastName: this.lastName,
+  async saveUser() {
+    const user: IUser = {
+      fname: this.firstName,
+      lname: this.lastName,
       gender: this.gender,
       address: this.address,
       phoneNumber: this.phoneNumber,
@@ -37,6 +38,7 @@ export class UserProfilePage implements OnInit {
 
     // Save user data logic here
     console.log('Saving user:', user);
+    await this.userService.saveUser(user);
 
     // Navigate back to home page and pass the user data
     this.router.navigate(['/home'], { state: { user: user } });

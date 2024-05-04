@@ -20,7 +20,14 @@ export class AddContactModalComponent {
 
   searchUsers() {
     if (this.phoneNumber.length >= 3) {
-      this.searchResults = this.userService.getUsers(this.phoneNumber);
+      this.userService.getUsers(this.phoneNumber).subscribe(
+        users => {
+          this.searchResults = users;
+        },
+        error => {
+          console.error(error);
+        }
+      );;
     } else {
       this.searchResults = [];
     }
