@@ -1,0 +1,36 @@
+<!-- patient-visits.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Patient Visits</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src={{user.avatar}}/>
+    </ion-avatar>
+    <ion-label>
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.gender }}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-list>
+    <ion-card *ngFor="let visit of patientVisits">
+      <ion-card-header>
+        <ion-card-title>{{ visit.date }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Doctor: {{ visit.doctorName }}</p>
+        <p>Health Complain: {{ visit.healthComplain }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openBookVisitModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

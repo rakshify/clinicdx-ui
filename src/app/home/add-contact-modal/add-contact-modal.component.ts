@@ -34,7 +34,7 @@ export class AddContactModalComponent {
   }
 
   navigateToHome(user: any) {
-    this.router.navigate(['/home'], { state: { user: user } });
+    this.router.navigate(['/patient-visits'], { state: { user: user } });
     this.modalController.dismiss();
   }
 

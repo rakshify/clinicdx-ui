@@ -41,6 +41,6 @@ export class UserProfilePage implements OnInit {
     await this.userService.saveUser(user);
 
     // Navigate back to home page and pass the user data
-    this.router.navigate(['/home'], { state: { user: user } });
+    this.router.navigate(['/patient-visits'], { state: { user: user } });
   }
 }
