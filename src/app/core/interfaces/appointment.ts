@@ -14,5 +14,5 @@ export interface IAppointment {
     consultDoctorSpeciality: string;
     clientId?: string;
     aptType: string;
-    aptAt: string;
+    aptAt: Date;
 }

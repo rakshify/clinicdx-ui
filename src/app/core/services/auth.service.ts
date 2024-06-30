@@ -1,21 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Observable, firstValueFrom, BehaviorSubject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
 
 import {IUserProfile} from '../interfaces/user'
-
-// interface IUserProfile {
-//   id: string;
-//   name: string;
-//   username: string;
-//   avatar?: string;
-//   isDoctor: boolean;
-//   isAdmin: boolean;
-//   isPharmacist: boolean;
-//   isLabTech: boolean;
-// }
 
 @Injectable({
   providedIn: 'root'
@@ -71,12 +59,6 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem('jwtToken');
   }
-
-  // isLoggedIn(): boolean {
-  //   const token = this.getToken();
-  //   console.log(`token: ${token}`);
-  //   return !!token;
-  // }
 
   getCurrentUser(): IUserProfile | null {
     return this.currentUserSubject.value;
@@ -139,22 +121,4 @@ export class AuthService {
     const user = this.getCurrentUser();
     return user ? user.roles.includes('lab-tech') : false;
   }
-
-  // async updateUserProfile(userData: Partial<IUserProfile>): Promise<IUserProfile> {
-  //   try {
-  //     const updatedUser = await firstValueFrom(
-  //       this.http.put<IUserProfile>(`${this.apiUrl}/user-profile`, userData)
-  //     );
-  //     const currentUser = await this.getCurrentUser();
-  //     if (currentUser) {
-  //       const newUser = { ...currentUser, ...updatedUser };
-  //       localStorage.setItem('currentUser', JSON.stringify(newUser));
-  //       this.currentUserSubject.next(newUser);
-  //     }
-  //     return updatedUser;
-  //   } catch (error) {
-  //     console.error('Error updating user profile:', error);
-  //     throw error;
-  //   }
-  // }
 }

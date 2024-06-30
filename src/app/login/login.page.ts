@@ -1,84 +1,3 @@
-// // import { Component, OnInit } from '@angular/core';
-// // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// // import { Router } from '@angular/router';
-
-// // @Component({
-// //   selector: 'app-login',
-// //   templateUrl: './login.page.html',
-// //   styleUrls: ['./login.page.scss'],
-// // })
-// // export class LoginPage implements OnInit {
-// //   loginForm: FormGroup;
-
-// //   constructor(private formBuilder: FormBuilder, private router: Router) {
-// //     this.loginForm = this.formBuilder.group({
-// //       storeId: ['', Validators.required],
-// //       username: ['', Validators.required],
-// //       pin: ['', Validators.required],
-// //       rememberMe: [false]
-// //     });
-// //   }
-
-// //   ngOnInit() {
-// //   }
-
-// //   login() {
-// //     // Perform any necessary login logic here
-// //     // For now, we'll just navigate to the home page
-// //     this.router.navigate(['/home']);
-// //   }
-// // }
-
-// import { Component, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
-// import { AuthService } from '../core/services/login.service';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.page.html',
-//   styleUrls: ['./login.page.scss'],
-// })
-// export class LoginPage implements OnInit {
-//   loginForm: FormGroup;
-//   errorMessage: string = '';
-
-//   constructor(
-//     private formBuilder: FormBuilder, 
-//     private router: Router,
-//     private authService: AuthService
-//   ) {
-//     this.loginForm = this.formBuilder.group({
-//       username: ['', Validators.required],
-//       password: ['', Validators.required],
-//       rememberMe: [false]
-//     });
-//   }
-
-//   ngOnInit() {
-//   }
-
-//   login() {
-//     if (this.loginForm.valid) {
-//       const username = this.loginForm.get('username')?.value;
-//       const password = this.loginForm.get('password')?.value;
-
-//       this.authService.login(username, password).subscribe(
-//         success => {
-//           if (success) {
-//             this.router.navigate(['/home']);
-//           } else {
-//             this.errorMessage = 'Invalid response from server';
-//           }
-//         },
-//         error => {
-//           this.errorMessage = 'Invalid username or password';
-//         }
-//       );
-//     }
-//   }
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -126,10 +45,6 @@ export class LoginPage implements OnInit {
         success => {
           if (success) {
             this.router.navigate(['/home']);
-            // .then(() => {
-            //   window.location.reload();
-            //   this.location.replaceState('/home');
-            // });
           } else {
             this.errorMessage = 'Invalid response from server';
           }

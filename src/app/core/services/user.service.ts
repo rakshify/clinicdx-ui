@@ -46,7 +46,7 @@ export class UserService {
       params: httpParams
     };
 
-    return this.http.get<any>('http://localhost:8080/users', httpOptions);
+    return this.http.get<any>(`${this.apiUrl}/users`, httpOptions);
   }
 
   async saveUser(user: IUser) {
@@ -68,7 +68,12 @@ export class UserService {
     };
     console.log(requestBody);
 
-    return await this.http.post('http://localhost:8080/users', requestBody, httpOptions).toPromise();
+    try {
+      return await this.http.post(`${this.apiUrl}/users`, user, httpOptions).toPromise();
+    } catch (error) {
+      console.error('Error saving user:', error);
+      throw error;
+    }
   }
 
   async getPatientVisits(patientId: string): Promise<any> {

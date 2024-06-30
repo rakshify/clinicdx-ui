@@ -16,10 +16,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'patient-visits',
-    loadChildren: () => import('./patient-visits/patient-visits.module').then( m => m.PatientVisitsPageModule)
-  },
-  {
     path: 'doctor-profile',
     loadChildren: () => import('./doctor-profile/doctor-profile.module').then( m => m.DoctorProfilePageModule)
   },
