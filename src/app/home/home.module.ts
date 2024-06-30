@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { AddContactModalComponent } from './add-contact-modal/add-contact-modal.component';
+import { BookAppointmentModalComponent } from './book-appointment-modal/book-appointment-modal.component';
 
 
 @NgModule({
@@ -15,6 +15,6 @@ import { AddContactModalComponent } from './add-contact-modal/add-contact-modal.
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, AddContactModalComponent]
+  declarations: [HomePage, BookAppointmentModalComponent]
 })
 export class HomePageModule {}

@@ -1,41 +1,84 @@
-ion-content {
-    --background: #f8f8f8;
-  }
+// // ion-content {
+// //     --background: #f8f8f8;
+// //   }
   
+// //   .login-container {
+// //     display: flex;
+// //     flex-direction: column;
+// //     justify-content: center;
+// //     align-items: center;
+// //     height: 100%;
+// //   }
+  
+// //   .login-header {
+// //     margin-bottom: 20px;
+// //   }
+  
+// //   ion-card {
+// //     --background: #f8f8f8;
+// //     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+// //     border-radius: 8px;
+// //     max-width: 400px;
+// //     width: 100%;
+// //   }
+  
+// //   ion-item {
+// //     --background: #f8f8f8;
+// //     --color: #333333;
+// //     --border-color: #cccccc;
+// //     --highlight-color-focused: rgba(0, 0, 0, 0.1);
+// //   }
+  
+// //   ion-button {
+// //     --background: #333333;
+// //     --color: #ffffff;
+// //     --border-radius: 4px;
+// //     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+// //     &:hover {
+// //       --background: #222222;
+// //     }
+// //   }
+
+// // login.page.scss
+
+// @import 'src/theme/shared-styles';
+
+// :host {
+//   @include shared-styles;
+
+//   .login-container {
+//     @extend .container;
+//   }
+
+//   .login-header {
+//     margin-bottom: 20px;
+//   }
+// }
+
+@import 'src/theme/shared-styles';
+
+:host {
+  @include shared-styles;
+
   .login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    @extend .container;
   }
-  
+
   .login-header {
     margin-bottom: 20px;
   }
-  
-  ion-card {
-    --background: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  ion-item {
-    --background: #f8f8f8;
-    --color: #333333;
-    --border-color: #cccccc;
-    --highlight-color-focused: rgba(0, 0, 0, 0.1);
-  }
-  
+
   ion-button {
-    --background: #333333;
+    margin-top: 16px;
+  }
+
+  .create-account-btn {
+    --background: #666666;
     --color: #ffffff;
-    --border-radius: 4px;
-    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
+
     &:hover {
-      --background: #222222;
+      --background: #555555;
     }
   }
+}

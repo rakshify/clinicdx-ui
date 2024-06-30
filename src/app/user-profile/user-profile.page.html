@@ -1,32 +1,52 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>User Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label position="floating" color="dark">First Name</ion-label>
-    <ion-input [(ngModel)]="firstName"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" color="dark">Last Name</ion-label>
-    <ion-input [(ngModel)]="lastName"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="dark">Gender</ion-label>
-    <ion-radio-group [(ngModel)]="gender">
-      <ion-radio value="male">Male</ion-radio>
-      <ion-radio value="female">Female</ion-radio>
-    </ion-radio-group>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" color="dark">Address</ion-label>
-    <ion-textarea [(ngModel)]="address"></ion-textarea>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" color="dark">Phone Number</ion-label>
-    <ion-input [(ngModel)]="phoneNumber"></ion-input>
-  </ion-item>
-  <ion-button expand="block" (click)="saveUser()">Save</ion-button>
+<ion-content class="ion-padding">
+  <ion-card *ngIf="user">
+    <ion-card-header>
+      <ion-card-title>General Information</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>First Name: {{user.fname}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Last Name: {{user.lname}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gender: {{user.gender}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Age: {{user.age}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="user">
+    <ion-card-header>
+      <ion-card-title>Contact Information</ion-card-title>
+      <ion-button fill="clear" (click)="toggleEditContact()">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="contactForm" (ngSubmit)="saveContactInfo()">
+        <ion-item>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input formControlName="phoneNumber" [readonly]="!editingContact"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" [readonly]="!editingContact"></ion-input>
+        </ion-item>
+        <ion-button *ngIf="editingContact" type="submit" expand="block">Save</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

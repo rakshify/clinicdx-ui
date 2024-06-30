@@ -7,7 +7,22 @@ import { IUser } from '../interfaces/user'
   providedIn: 'root'
 })
 export class UserService {
+  private apiUrl = "http://localhost:3000";
+
   constructor(private http: HttpClient) {}
+
+  async getUserDetails(userId: string): Promise<IUser | null> {
+    const url = `${this.apiUrl}/users/${userId}`;
+    const response = await this.http.get<IUser>(url).toPromise();
+    return response ?? null;
+  }
+
+  async updateUserDetails(userId: string, userDetails: Partial<IUser>
+    ): Promise<IUser | null> {
+    const url = `${this.apiUrl}/users/${userId}`;
+    const response = await this.http.put<IUser>(url, userDetails).toPromise();
+    return response ?? null;
+  }
 
   getUsers(prefix: string): Observable<any> {
     const filter = {

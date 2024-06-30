@@ -12,16 +12,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'patient-visits',
+    loadChildren: () => import('./patient-visits/patient-visits.module').then( m => m.PatientVisitsPageModule)
+  },
+  {
+    path: 'doctor-profile',
+    loadChildren: () => import('./doctor-profile/doctor-profile.module').then( m => m.DoctorProfilePageModule)
   },
   {
     path: 'user-profile',
     loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
   {
-    path: 'patient-visits',
-    loadChildren: () => import('./patient-visits/patient-visits.module').then( m => m.PatientVisitsPageModule)
+    path: 'doctor-patients',
+    loadChildren: () => import('./doctor-patients/doctor-patients.module').then( m => m.DoctorPatientsPageModule)
   },
 ];
 

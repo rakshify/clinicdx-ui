@@ -1,27 +1,38 @@
-#container {
-  text-align: center;
+@import 'src/theme/shared-styles';
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+:host {
+  @include shared-styles;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  .container {
+    @extend .container;
+  }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  .book-appointment-btn {
+    font-size: 1.2em;
+    padding: 20px;
+    max-width: 300px;
+  }
 
-  color: #8c8c8c;
+  ion-menu-button {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
 
-  margin: 0;
-}
+  ion-avatar {
+    width: 32px;
+    height: 32px;
+  }
 
-#container a {
-  text-decoration: none;
+  ion-menu {
+    --width: 250px;
+  }
+
+  ion-item {
+    --padding-start: 16px;
+    cursor: pointer;
+
+    &:hover {
+      --background: var(--ion-color-light);
+    }
+  }
 }

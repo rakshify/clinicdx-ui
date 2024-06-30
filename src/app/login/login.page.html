@@ -7,16 +7,12 @@
       <ion-card-content>
         <form [formGroup]="loginForm" (ngSubmit)="login()">
           <ion-item>
-            <ion-label position="floating">Store Id</ion-label>
-            <ion-input type="text" formControlName="storeId"></ion-input>
-          </ion-item>
-          <ion-item>
             <ion-label position="floating">Username</ion-label>
             <ion-input type="text" formControlName="username"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">PIN</ion-label>
-            <ion-input type="password" formControlName="pin"></ion-input>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
           <ion-item lines="none">
             <ion-checkbox formControlName="rememberMe"></ion-checkbox>
@@ -26,6 +22,12 @@
             Login
           </ion-button>
         </form>
+        <ion-text color="danger" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </ion-text>
+        <ion-button expand="block" (click)="openRegistrationModal()" color="secondary" class="create-account-btn">
+          Create New Account
+        </ion-button>
       </ion-card-content>
     </ion-card>
   </div>

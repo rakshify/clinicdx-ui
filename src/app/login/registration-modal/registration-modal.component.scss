@@ -1,0 +1,138 @@
+// // // :host {
+// // //     ion-content {
+// // //       --background: #f8f8f8;
+// // //     }
+  
+// // //     .registration-container {
+// // //       display: flex;
+// // //       flex-direction: column;
+// // //       justify-content: center;
+// // //       align-items: center;
+// // //       height: 100%;
+// // //     }
+  
+// // //     ion-card {
+// // //       --background: #f8f8f8;
+// // //       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+// // //       border-radius: 8px;
+// // //       max-width: 400px;
+// // //       width: 100%;
+// // //     }
+  
+// // //     ion-item {
+// // //       --background: #f8f8f8;
+// // //       --color: #333333;
+// // //       --border-color: #cccccc;
+// // //       --highlight-color-focused: rgba(0, 0, 0, 0.1);
+// // //     }
+  
+// // //     ion-button {
+// // //       --background: #333333;
+// // //       --color: #ffffff;
+// // //       --border-radius: 4px;
+// // //       --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+// // //       &:hover {
+// // //         --background: #222222;
+// // //       }
+// // //     }
+  
+// // //     ion-button[color="medium"] {
+// // //       --background: #cccccc;
+// // //       --color: #333333;
+  
+// // //       &:hover {
+// // //         --background: #bbbbbb;
+// // //       }
+// // //     }
+  
+// // //     ion-button[color="secondary"] {
+// // //       --background: #666666;
+// // //       --color: #ffffff;
+  
+// // //       &:hover {
+// // //         --background: #555555;
+// // //       }
+// // //     }
+// // //   }
+
+// // // registration-modal.component.scss
+
+// // @import 'src/theme/shared-styles';
+
+// // :host {
+// //   @include shared-styles;
+
+// //   .registration-container {
+// //     @extend .container;
+// //   }
+
+// //   ion-button[color="medium"] {
+// //     --background: #cccccc;
+// //     --color: #333333;
+
+// //     &:hover {
+// //       --background: #bbbbbb;
+// //     }
+// //   }
+
+// //   ion-button[color="secondary"] {
+// //     --background: #666666;
+// //     --color: #ffffff;
+
+// //     &:hover {
+// //       --background: #555555;
+// //     }
+// //   }
+// // }
+
+// // registration-modal.component.scss
+
+// @import 'src/theme/shared-styles';
+
+// :host {
+//   @include shared-styles;
+
+//   .registration-container {
+//     @extend .container;
+//   }
+
+//   .button-container {
+//     display: flex;
+//     justify-content: flex-end;
+//     margin-top: 16px;
+//     width: 100%;
+
+//     ion-button {
+//       margin-left: 8px;
+//     }
+//   }
+// }
+
+// registration-modal.component.scss
+
+@import 'src/theme/shared-styles';
+
+:host {
+  @include shared-styles;
+
+  .registration-container {
+    @extend .container;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .left-button,
+  .right-button {
+    display: flex;
+  }
+
+  .right-button {
+    justify-content: flex-end;
+  }
+}

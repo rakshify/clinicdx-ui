@@ -1,29 +1,24 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <!-- <ion-avatar>
+          <img [src]="userAvatarUrl" alt="User Avatar">
+        </ion-avatar> -->
+      </ion-menu-button>
+    </ion-buttons>
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="openAddModal()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" *ngFor="let user of users">
-        <ion-card class="user-card">
-          <ion-avatar>
-            <ion-icon name="person-circle-outline"></ion-icon>
-          </ion-avatar>
-          <ion-card-header>
-            <ion-card-title>{{ user.firstName }} {{ user.lastName }}</ion-card-title>
-            <ion-card-subtitle>{{ user.phoneNumber }}</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content class="ion-padding">
+  <div class="container">
+    <ion-button (click)="openBookAppointment()" expand="block" class="book-appointment-btn">
+      Book Appointment
+    </ion-button>
+  </div>
 </ion-content>
+
+<!-- <ion-menu sid nu> -->
+
+<ion-router-outlet id="main"></ion-router-outlet>

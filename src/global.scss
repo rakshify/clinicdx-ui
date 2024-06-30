@@ -25,6 +25,12 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@import 'theme/variables';
+@import 'theme/shared-styles';
+
+// Apply shared styles globally
+@include shared-styles;
+
 // Global styles
 ion-content {
     --background: #f8f8f8;
