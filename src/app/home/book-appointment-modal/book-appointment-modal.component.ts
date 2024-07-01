@@ -25,20 +25,20 @@ export class BookAppointmentModalComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getHospitalSpecialities();
+    this.getHospitalSpecialties();
   }
 
-  async getHospitalSpecialities() {
-    // this.specialities = await this.clientService.getHospitalSpecialities();
+  async getHospitalSpecialties() {
+    // this.specialities = await this.clientService.getHospitalSpecialties();
     // console.log(this.specialities);
     try {
-      this.specialities = await this.clientService.getHospitalSpecialities();
+      this.specialities = await this.clientService.getHospitalSpecialties();
       console.log(this.specialities);
     } catch (error) {
       console.error('Error fetching hospital specialities:', error);
       // Handle the error appropriately
     }
-    // this.clientService.getHospitalSpecialities().subscribe(
+    // this.clientService.getHospitalSpecialties().subscribe(
     //   (specialities) => {
     //     this.specialities = specialities;
     //   },
